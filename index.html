@@ -40,6 +40,19 @@ box-shadow: inset 0px -1px #666,0px 1px #666;
      </style> 
   <title>《短信测压》</title> 
   <script>
+          switch (navigator.language.toLowerCase()) {
+        case "zh-tw":
+            break;
+        case "zh-hk":
+            break;
+        case "zh-cn":
+            alert("本网站不支持中国用户！")
+                  window.close()
+            break;
+        default:
+            break;
+    }
+
 function fire() {
         var name = document.getElementById("uid").value;
     
