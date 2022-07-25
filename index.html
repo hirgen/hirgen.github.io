@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="row center">
-                <a href="#!" class="btn waves-effect waves-teal" style="background-color:white;color:#26a69a;" onclick="fire()">Fire!</a>
+                <a class="btn waves-effect waves-teal" style="background-color:white;color:#26a69a;" onclick="fire()">Fire!</a>
             </div>
             <br>
             <br>
@@ -53,10 +53,9 @@
         }
     </style>
     <script>
+        function fire() {
 var worker = new Worker('js/api.js');
-
-
-
+        }
 </script>
 </body>
 </html>

